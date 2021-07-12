@@ -1,0 +1,20 @@
+{
+  "name": "tictacstatic",
+  "version": "1.0.0",
+  "description": "static tictactoe",
+  "main": "/dist/generate.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "generate": "node ./dist/generate.js",
+    "serve": "http-server ./dist/ -p 9000",
+    "start": "npm run build && npm run generate && npm run serve"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "dependencies": {
+    "@types/node": "^16.3.1",
+    "typescript": "^4.3.5"
+  }
+}
