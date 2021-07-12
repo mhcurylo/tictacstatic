@@ -15,4 +15,10 @@ const renderIndex = (baseUrl: string) =>
   </body>
 </html>`
 
-export const createIndex = (baseUrl: string, baseDir: string): void => fs.writeFileSync(`${baseDir}/index.html`, renderIndex(baseUrl));
+export const createIndex = (baseUrl: string, baseDir: string): void => {
+  if (!fs.existsSync(`${baseDir}`)) {
+    fs.mkdirSync(`${baseDir}`)
+  }
+
+  fs.writeFileSync(`${baseDir}/index.html`, renderIndex(baseUrl));
+}
