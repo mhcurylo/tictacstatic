@@ -17,15 +17,20 @@ const renderField = (
 const renderResult = (v: Domain.Field): string =>
   `<div id="">${v == "-" ? "Draw" : "Winner: " + v}</div>`;
 
-const render = (t: string, s: Domain.State, l: LinkMapper): string =>
-  `<div style="margin-top: 100px; width: 100%; display: flex; align-items: center; flex-direction: column; justify-content: center;"><div style="width: 300px; text-align: center; margin-bottom: 10px">Tic Tac Static</div><div style="width: 300px; text-align: center; margin-bottom: 10px">${t}</div><div style="width: 300px; display: block; text-align: center;">${s
+const render = (
+  baseUrl: string,
+  t: string,
+  s: Domain.State,
+  l: LinkMapper
+): string =>
+  `<div style="margin-top: 100px; width: 100%; display: flex; align-items: center; flex-direction: column; justify-content: center;"><img src="${baseUrl}/favicon.ico" alt="StaTic" width="32" height="32"/><div style="width: 300px; text-align: center; margin-bottom: 10px; margin-top: 10px;">${t}</div><div style="width: 300px; display: block; text-align: center;">${s
     .map((v, i) => renderField(s, v, i as Domain.FieldNumber, l))
     .join("")}</div><div>${
     Domain.isFinished(s) ? renderResult(Domain.result(s)) : ""
   }</div></div>`;
 
 export const renderHTML =
-  (t: string, l: LinkMapper) =>
+  (baseUrl: string, t: string, l: LinkMapper) =>
   (s: Domain.State): string =>
     `<!doctype html>
 <html>
@@ -33,6 +38,6 @@ export const renderHTML =
     <title>Tic Tac Static</title>
   </head>
   <body>
-    ${render(t, s, l)}
+    ${render(baseUrl, t, s, l)}
   </body>
 </html>`;

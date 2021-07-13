@@ -19,7 +19,7 @@ export const createAI = (baseUrl: string, baseDir: string): void => {
   const linkMapper = (s: Domain.State, i: Domain.FieldNumber) =>
     `${baseUrl}/ai/${Domain.stringify(nextState(i, s))}.html`;
 
-  const render = renderHTML("Player vs AI", linkMapper);
+  const render = renderHTML(baseUrl, "Player vs AI", linkMapper);
 
   if (!fs.existsSync(`${baseDir}/ai`)) {
     fs.mkdirSync(`${baseDir}/ai`);

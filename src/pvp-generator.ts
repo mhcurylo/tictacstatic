@@ -9,7 +9,7 @@ export const createPvP = (baseUrl: string, baseDir: string): void => {
 
     return `${baseUrl}/pvp/${Domain.stringify(nextState ? nextState : s)}.html`;
   };
-  const render = renderHTML("Player vs Player", linkMapper);
+  const render = renderHTML(baseUrl, "Player vs Player", linkMapper);
 
   if (!fs.existsSync(`${baseDir}/pvp`)) {
     fs.mkdirSync(`${baseDir}/pvp`);
