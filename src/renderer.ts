@@ -35,7 +35,8 @@ export const renderHTML =
     `<!doctype html>
 <html>
   <head>
-    <title>Tic Tac Static</title>
+    <title>StaTic</title>
+    <link rel="icon" type="image/ico" href="${baseUrl}/favicon.ico"/>
   </head>
   <body>
     ${render(baseUrl, t, s, l)}
