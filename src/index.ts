@@ -20,5 +20,8 @@ export const createIndex = (baseUrl: string, baseDir: string): void => {
     fs.mkdirSync(`${baseDir}`);
   }
 
+
+  fs.copyFileSync("./resources/favicon.ico", `${baseDir}/favicon.ico`);
+
   fs.writeFileSync(`${baseDir}/index.html`, renderIndex(baseUrl));
 };

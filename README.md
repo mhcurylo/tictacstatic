@@ -1,6 +1,6 @@
-# Tic Tac Static
+# StaTic
 
-Static Tic Tac Toe generator.
+StaTic Tic Tac Toe generator.
 
 
 This repo implements the generation of the Tic Tac Toe game and a Tic Tac Toe AI as a collection of static HTML pages.
